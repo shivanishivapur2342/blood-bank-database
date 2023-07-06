@@ -1,0 +1,57 @@
+create table donar
+(
+	
+	d_Id integer,
+	d_name varchar(20),
+	d_age integer,
+	d_contact_no integer,
+	d_gender varchar(1),
+	d_address varchar(20),
+	d_blood_group varchar(5),
+	PRIMARY KEY(d_Id)
+);
+
+create table blood 
+(
+	bottle_no integer,
+	blood_group varchar(5),
+	expiry_date date,
+	d_Id integer,
+	quantity int,
+	Date_of_donation date,
+	PRIMARY KEY(bottle_no),
+	FOREIGN KEY (d_Id) REFERENCES donar (d_Id)
+);
+
+create table hospital
+(
+	hosp_Id integer,
+	h_name varchar(20),
+	h_address varchar(30),
+	h_contact_no integer,
+	PRIMARY KEY(hosp_Id)
+);
+
+
+create table patient
+(
+	Reg_Id integer,
+	p_name varchar(20),
+	p_age integer,
+	p_address varchar(20),
+	p_contact_no integer,
+	PRIMARY KEY(Reg_Id)
+);
+
+create table staff
+(
+	s_name varchar(20),
+	s_designation_Id,
+	s_designation varchar(10),
+	s_contact_no integer,
+	PRIMARY KEY(s_designation_Id)
+);
+	
+
+INSERT INTO DONOR VALUES(101,'rohan',24,'M',2787973865,'BELGAVI')
+INSERT INTO DONOR VALUES(1000,'rohan',24,'M',2787973865,'BELGAVI')
